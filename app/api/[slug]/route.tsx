@@ -6,7 +6,7 @@ export async function GET(
   request: Request,
   { params }: { params: { slug: string } }
 ) {
-  const { slug } = params;
+  const { slug } = await params;
   const filePath = path.join(process.cwd(), "reading-things", `${slug}.json`);
 
   if (!fs.existsSync(filePath)) {
