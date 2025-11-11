@@ -19,7 +19,6 @@ const FirstPage = () => {
 
     const shuffle = things.sort(() => 0.5 - Math.random());
     let shuffled = shuffle.slice(0, 3);
-    console.log(shuffled)
 
     return (
         <div className='flex flex-col space-y-14 pt-18 mx-52'>
