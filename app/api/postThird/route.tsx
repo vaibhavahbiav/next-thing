@@ -9,7 +9,7 @@ export async function POST(request: Request) {
 
     if (!name) {
       return NextResponse.json(
-        { error: "Missing 'name' field in request body" },
+        { error: "You must have a 'name'" },
         { status: 400 }
       );
     }
@@ -26,7 +26,7 @@ export async function POST(request: Request) {
       data: reqBody,
     });
   } catch (error: any) {
-    console.error("Error saving file:", error);
+    console.error("Error! Something happened but not saving:", error);
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
 }
@@ -35,26 +35,3 @@ export async function GET() {
   const files = await fs.promises.readdir("third-things");
   return NextResponse.json({ files });
 }
-
-
-// import * as fs from 'fs';
-// import { NextResponse } from 'next/server';
-
-// export async function POST(request: Request) {
-//   try {
-//     const reqBody = await request.json();
-
-//     const data = await fs.promises.readdir('third-things');
-//     const filename = `third-things/third-data-${data.length}.json`;
-
-//     await fs.promises.writeFile(filename, JSON.stringify(reqBody));
-
-//     return NextResponse.json({ message: 'success', file: filename, data: reqBody });
-//   } catch (error: any) {
-//     return NextResponse.json({ error: error.message }, { status: 500 });
-//   }
-// }
-
-// export async function GET() {
-//   return NextResponse.json({ message: 'GET is not getting' });
-// }
