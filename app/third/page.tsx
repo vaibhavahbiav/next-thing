@@ -57,12 +57,12 @@ const ThirdPage = () => {
 
   const handleClick = () => {
     setClicked(true);
-    setTimeout(() => setClicked(false), 2000); // hide after 2s
+    setTimeout(() => setClicked(false), 2000);
   };
 
   return (
     <div className='flex flex-col space-y-18 pt-10 mx-52'>
-      <h1 className='text-4xl uppercase text-cyan-950 font-medium tracking-widest text-left border-l-8 pl-5 border-teal-600 leading-loose'>send us greetings?</h1>
+      <h1 className='text-4xl uppercase text-cyan-950 font-medium tracking-widest text-left border-l-8 pl-5 border-teal-600 leading-loose'>send us a greeting?</h1>
       <div className='border-l-2 border-r-2 border-teal-800 py-10'>
         <form className='flex items-center justify-center space-x-9' autoComplete='off' onSubmit={handleSubmit}>
           <div className='flex-col flex space-y-7 ml-9 w-1/3'>
