@@ -22,10 +22,9 @@ export default async function UserPage({ params }: Props) {
 
     return (
         <div className="mx-50 py-20 text-cyan-50">
-            <Link href="/second">
-                <div className="flex items-center justify-start ml-20 text-lg text-cyan-800 tracking-wider group space-x-2"><span className="text-2xl group-hover:-translate-x-1 transition-transform">←</span><span className="group-hover:underline group-hover:underline-offset-8">back to all reading things</span></div>
+            <Link className="flex items-center justify-start w-fit ml-20 text-lg text-cyan-800 tracking-wider group space-x-2" href="/second">
+                <span className="text-2xl group-hover:-translate-x-1 transition-transform">←</span><span className="group-hover:underline group-hover:underline-offset-8">back to all reading things</span>
             </Link>
-
             <div className="flex-col flex items-center mt-20 tracking-wider">
                 <h1 className="text-5xl text-cyan-800 text-center font-bold border-l-4 border-teal-800 pl-10 leading-relaxed min-w-full">"{data.title}"</h1>
                 <p className="mt-5 text-sm text-teal-600 italic ml-60">~ <span className="underline underline-offset-4">{data.by}</span></p>
